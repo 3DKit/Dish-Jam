@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f72651565180fca4c8fe7de17116517b, type: 3}
+  m_Name: Level_0_Dishdata
+  m_EditorClassIdentifier: 
+  verticalSlots: 5
+  horizontalSlots: 4
+  imageSpacing: 188
+  imageSize: 128
+  dishes:
+  - dishColor: 1
+    horizontalSlot: 0
+    verticalSlot: 0
+  - dishColor: 0
+    horizontalSlot: 0
+    verticalSlot: 1
+  - dishColor: 1
+    horizontalSlot: 0
+    verticalSlot: 2
+  - dishColor: 0
+    horizontalSlot: 0
+    verticalSlot: 3
+  - dishColor: 0
+    horizontalSlot: 0
+    verticalSlot: 4
+  - dishColor: 3
+    horizontalSlot: 1
+    verticalSlot: 0
+  - dishColor: 0
+    horizontalSlot: 1
+    verticalSlot: 1
+  - dishColor: 0
+    horizontalSlot: 1
+    verticalSlot: 2
+  - dishColor: 0
+    horizontalSlot: 1
+    verticalSlot: 3
+  - dishColor: 6
+    horizontalSlot: 1
+    verticalSlot: 4
+  - dishColor: 0
+    horizontalSlot: 2
+    verticalSlot: 0
+  - dishColor: 3
+    horizontalSlot: 2
+    verticalSlot: 1
+  - dishColor: 0
+    horizontalSlot: 2
+    verticalSlot: 2
+  - dishColor: 0
+    horizontalSlot: 2
+    verticalSlot: 3
+  - dishColor: 7
+    horizontalSlot: 2
+    verticalSlot: 4
+  - dishColor: 0
+    horizontalSlot: 3
+    verticalSlot: 0
+  - dishColor: 0
+    horizontalSlot: 3
+    verticalSlot: 1
+  - dishColor: 0
+    horizontalSlot: 3
+    verticalSlot: 2
+  - dishColor: 0
+    horizontalSlot: 3
+    verticalSlot: 3
+  - dishColor: 8
+    horizontalSlot: 3
+    verticalSlot: 4
