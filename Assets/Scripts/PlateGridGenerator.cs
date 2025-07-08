@@ -5,10 +5,10 @@ using static Enums;
 public class PlateGridGenerator : MonoBehaviour
 {
     [Header("References")]
-    public DishData dishData;
-    public GameObject platesPanel;
-    public GameObject panelPrefab;
-    public GameObject imagePrefab;
+    [HideInInspector] public DishData dishData;
+    [HideInInspector] public GameObject platesPanel;
+    [HideInInspector] public GameObject panelPrefab;
+    [HideInInspector] public GameObject imagePrefab;
     
     [Header("Grid Settings")]
     public float imageSpacing = 128f;
@@ -16,15 +16,6 @@ public class PlateGridGenerator : MonoBehaviour
     [Header("Generated Objects")]
     public GameObject[] generatedPanels;
     public Image[][] generatedImages;
-    
-    // Start fonksiyonunu kaldır - artık LevelGenerator kontrol edecek
-    // private void Start()
-    // {
-    //     if (dishData != null)
-    //     {
-    //         GeneratePlateGrid();
-    //     }
-    // }
     
     [ContextMenu("Generate Plate Grid")]
     public void GeneratePlateGrid()
@@ -110,7 +101,7 @@ public class PlateGridGenerator : MonoBehaviour
         RectTransform rectTransform = imageObj.GetComponent<RectTransform>();
         rectTransform.anchorMin = new Vector2(0.5f, 1f);
         rectTransform.anchorMax = new Vector2(0.5f, 1f);
-        rectTransform.pivot = new Vector2(0.5f, 1f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);
         rectTransform.sizeDelta = new Vector2(dishData.imageSize, dishData.imageSize);
         rectTransform.anchoredPosition = new Vector2(0, -y * dishData.imageSpacing);
             
@@ -123,13 +114,14 @@ public class PlateGridGenerator : MonoBehaviour
             img = imageObj.AddComponent<Image>();
         }
         
-        // RectTransform ayarları (prefab için) - Top Center
+        // RectTransform ayarları (prefab için) - Top Center'dan başlasın
         RectTransform prefabRectTransform = imageObj.GetComponent<RectTransform>();
         prefabRectTransform.anchorMin = new Vector2(0.5f, 1f);
         prefabRectTransform.anchorMax = new Vector2(0.5f, 1f);
-        prefabRectTransform.pivot = new Vector2(0.5f, 1f);
+        prefabRectTransform.pivot = new Vector2(0.5f, 0.5f);
         prefabRectTransform.sizeDelta = new Vector2(dishData.imageSize, dishData.imageSize);
-        prefabRectTransform.anchoredPosition = new Vector2(0, -y * dishData.imageSpacing);
+        float yOffset = -y * dishData.imageSpacing - dishData.imageSize / 2f;
+        prefabRectTransform.anchoredPosition = new Vector2(0, yOffset);
         
         return img;
     }
@@ -138,11 +130,12 @@ public class PlateGridGenerator : MonoBehaviour
     {
         if (dishData.dishes == null || dishData.dishes.Length == 0)
         {
-            image.color = Color.gray;
+            image.color = Color.clear;
             return;
         }
         
         // DishData'dan renk bul
+        bool found = false;
         GameColors color = GameColors.Red; // Varsayılan
         
         foreach (var dish in dishData.dishes)
@@ -150,12 +143,16 @@ public class PlateGridGenerator : MonoBehaviour
             if (dish.horizontalSlot == x && dish.verticalSlot == y)
             {
                 color = dish.dishColor;
+                found = true;
                 break;
             }
         }
         
         // Renk ayarla
-        image.color = GetColorFromEnum(color);
+        if (found)
+            image.color = GetColorFromEnum(color);
+        else
+            image.color = Color.clear;
     }
     
     private Color GetColorFromEnum(GameColors gameColor)

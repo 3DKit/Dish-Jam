@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level_0_Dishdata
   m_EditorClassIdentifier: 
   verticalSlots: 5
-  horizontalSlots: 4
+  horizontalSlots: 5
   imageSpacing: 188
   imageSize: 128
   dishes:
@@ -53,7 +53,7 @@ MonoBehaviour:
   - dishColor: 3
     horizontalSlot: 2
     verticalSlot: 1
-  - dishColor: 0
+  - dishColor: 3
     horizontalSlot: 2
     verticalSlot: 2
   - dishColor: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   - dishColor: 7
     horizontalSlot: 2
     verticalSlot: 4
-  - dishColor: 0
+  - dishColor: 5
     horizontalSlot: 3
     verticalSlot: 0
   - dishColor: 0
@@ -71,9 +71,24 @@ MonoBehaviour:
   - dishColor: 0
     horizontalSlot: 3
     verticalSlot: 2
-  - dishColor: 0
+  - dishColor: 2
     horizontalSlot: 3
     verticalSlot: 3
   - dishColor: 8
     horizontalSlot: 3
+    verticalSlot: 4
+  - dishColor: 3
+    horizontalSlot: 4
+    verticalSlot: 0
+  - dishColor: 4
+    horizontalSlot: 4
+    verticalSlot: 1
+  - dishColor: 0
+    horizontalSlot: 4
+    verticalSlot: 2
+  - dishColor: 0
+    horizontalSlot: 4
+    verticalSlot: 3
+  - dishColor: 0
+    horizontalSlot: 4
     verticalSlot: 4
