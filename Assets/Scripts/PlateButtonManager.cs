@@ -7,15 +7,10 @@ public class PlateButtonManager : MonoBehaviour
     private GameObject[] platePanels;
     private List<PlateButton> plateButtons = new List<PlateButton>();
 
-    private void Start()
+    private void Awake()
     {
         Debug.Log("PlateButtonManager started");
         levelGenerator = this.GetComponent<LevelGenerator>();
-    }
-
-    private void Update()
-    {
-        SetOnlyTopPlateButtonsInteractable();
     }
 
     public void GetAllPlatePanels()
@@ -71,7 +66,7 @@ public class PlateButtonManager : MonoBehaviour
         if (button.transform.parent == null) return false;
         int myIndex = button.transform.GetSiblingIndex();
         int childCount = button.transform.parent.childCount;
-        return myIndex == childCount - 1;
+        return myIndex == 0;
     }
 
     public void SetOnlyTopPlateButtonsInteractable()
@@ -129,4 +124,4 @@ public class PlateButtonManager : MonoBehaviour
             }
         }
     }
-} 
+}

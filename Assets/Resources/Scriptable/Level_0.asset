@@ -16,7 +16,7 @@ MonoBehaviour:
   availableSlots: 4
   timeLimit: 60
   floors:
-  - floorColors: 05000000030000000200000008000000
+  - floorColors: 050000000300000002000000
   - floorColors: 000000000200000001000000
   - floorColors: 010000000200000001000000
   dishData: {fileID: 11400000, guid: 4018ce71344048f468458f9a879a2883, type: 2}
